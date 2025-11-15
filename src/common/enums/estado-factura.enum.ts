@@ -1,0 +1,8 @@
+export enum EstadoFactura {
+  BORRADOR = 'BORRADOR',
+  ENVIADA = 'ENVIADA',
+  PAGADA = 'PAGADA',
+  PAGADA_PARCIAL = 'PAGADA_PARCIAL',
+  ANULADA = 'ANULADA',
+}
+

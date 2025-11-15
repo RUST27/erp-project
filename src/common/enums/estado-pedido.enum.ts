@@ -1,0 +1,8 @@
+export enum EstadoPedido {
+  BORRADOR = 'BORRADOR',
+  CONFIRMADO = 'CONFIRMADO',
+  ENVIADO = 'ENVIADO',
+  FACTURADO = 'FACTURADO',
+  CANCELADO = 'CANCELADO',
+}
+

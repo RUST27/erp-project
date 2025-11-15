@@ -21,8 +21,8 @@ import { AppService } from './app.service';
         username: configService.get<string>('DB_USERNAME', 'postgres'),
         password: configService.get<string>('DB_PASSWORD'),
         database: configService.get<string>('DB_DATABASE', 'erp_db'),
-        // TODO: Importar todas las entidades cuando se creen
-        // entities: [__dirname + '/**/*.entity{.ts,.js}'],
+        // Importar todas las entidades
+        entities: [__dirname + '/**/*.entity{.ts,.js}'],
         synchronize: configService.get<string>('NODE_ENV') === 'development', // Solo en desarrollo
         logging: configService.get<string>('NODE_ENV') === 'development',
         ssl: configService.get<string>('NODE_ENV') === 'production' ? { rejectUnauthorized: false } : false,
