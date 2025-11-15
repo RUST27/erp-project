@@ -4,9 +4,11 @@ import {
   Column,
   CreateDateColumn,
   ManyToOne,
+  OneToMany,
   JoinColumn,
 } from 'typeorm';
 import { Entidad } from './entidad.entity';
+import { RolUsuario } from './rol-usuario.entity';
 
 @Entity('nucleo_usuarios')
 export class Usuario {
@@ -33,5 +35,9 @@ export class Usuario {
 
   @CreateDateColumn({ type: 'timestamptz' })
   fecha_creacion: Date;
+
+  // Relaciones
+  @OneToMany(() => RolUsuario, (rol) => rol.usuario)
+  roles: RolUsuario[];
 }
 

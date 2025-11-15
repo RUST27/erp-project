@@ -56,6 +56,14 @@ CREATE TABLE nucleo_usuarios (
     fecha_creacion TIMESTAMPTZ DEFAULT NOW()
 );
 
+-- Roles del sistema para usuarios (ADMIN, VENTAS, COMPRAS, INVENTARIO, etc.)
+CREATE TABLE nucleo_roles_usuario (
+    usuario_id UUID NOT NULL REFERENCES nucleo_usuarios(usuario_id) ON DELETE CASCADE,
+    tipo_rol VARCHAR(20) NOT NULL CHECK (tipo_rol IN ('ADMIN', 'VENTAS', 'COMPRAS', 'INVENTARIO', 'CONTABILIDAD', 'USUARIO')),
+    fecha_asignacion TIMESTAMPTZ DEFAULT NOW(),
+    PRIMARY KEY (usuario_id, tipo_rol) -- Un usuario solo puede tener cada rol una vez
+);
+
 -- ventas
 
 CREATE TABLE ventas_pedidos (
@@ -206,6 +214,10 @@ CREATE INDEX idx_nucleo_productos_activo ON nucleo_productos(esta_activo);
 -- Índices en nucleo_usuarios
 CREATE INDEX idx_nucleo_usuarios_email ON nucleo_usuarios(email);
 CREATE INDEX idx_nucleo_usuarios_entidad ON nucleo_usuarios(entidad_id);
+
+-- Índices en nucleo_roles_usuario
+CREATE INDEX idx_nucleo_roles_usuario_usuario ON nucleo_roles_usuario(usuario_id);
+CREATE INDEX idx_nucleo_roles_usuario_rol ON nucleo_roles_usuario(tipo_rol);
 
 -- Índices en ventas_pedidos
 CREATE INDEX idx_ventas_pedidos_cliente ON ventas_pedidos(cliente_id);

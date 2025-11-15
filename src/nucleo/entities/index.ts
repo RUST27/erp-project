@@ -3,4 +3,5 @@ export * from './direccion.entity';
 export * from './rol-entidad.entity';
 export * from './producto.entity';
 export * from './usuario.entity';
+export * from './rol-usuario.entity';
 

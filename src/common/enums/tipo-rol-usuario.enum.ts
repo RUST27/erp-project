@@ -1,0 +1,9 @@
+export enum TipoRolUsuario {
+  ADMIN = 'ADMIN',
+  VENTAS = 'VENTAS',
+  COMPRAS = 'COMPRAS',
+  INVENTARIO = 'INVENTARIO',
+  CONTABILIDAD = 'CONTABILIDAD',
+  USUARIO = 'USUARIO',
+}
+

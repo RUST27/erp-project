@@ -1,5 +1,6 @@
 export * from './tipo-entidad.enum';
 export * from './tipo-rol.enum';
+export * from './tipo-rol-usuario.enum';
 export * from './tipo-direccion.enum';
 export * from './tipo-producto.enum';
 export * from './estado-pedido.enum';
