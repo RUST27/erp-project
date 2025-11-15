@@ -46,9 +46,9 @@ async function bootstrap() {
     )
     .addTag('auth', 'Endpoints de autenticación y registro')
     .addTag('nucleo', 'Gestión de productos, entidades y usuarios')
+    .addTag('inventario', 'Gestión de almacenes, stock y movimientos de inventario')
     .addTag('ventas', 'Gestión de pedidos y facturas de venta')
     .addTag('compras', 'Gestión de órdenes de compra y facturas de proveedor')
-    .addTag('inventario', 'Gestión de almacenes, stock y movimientos')
     .build();
 
   const document = SwaggerModule.createDocument(app, config);

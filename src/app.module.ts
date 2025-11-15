@@ -5,6 +5,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
 import { NucleoModule } from './nucleo/nucleo.module';
+import { InventarioModule } from './inventario/inventario.module';
 
 @Module({
   imports: [
@@ -34,6 +35,7 @@ import { NucleoModule } from './nucleo/nucleo.module';
     // Módulos de negocio
     AuthModule,
     NucleoModule,
+    InventarioModule,
   ],
   controllers: [AppController],
   providers: [AppService],
